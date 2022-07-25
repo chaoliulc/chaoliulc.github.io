@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>路漫漫其修远兮</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2022-05-10T02:42:27.955Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python2.7 安装mysql</title>
+    <link href="http://yoursite.com/2019/04/23/python2-7-%E5%AE%89%E8%A3%85mysql/"/>
+    <id>http://yoursite.com/2019/04/23/python2-7-安装mysql/</id>
+    <published>2019-04-23T09:55:17.000Z</published>
+    <updated>2022-05-10T02:42:27.955Z</updated>
+    
+    <content type="html"><![CDATA[<p>win10 下python 2.7 安装mysql-python,会出现错误，详细情况与解决方法如下<a id="more"></a>:</p><p>安装mysql-python时执行以下命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mysql</span><br></pre></td></tr></table></figure><p>结果会报如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat).</span><br><span class="line">Get it from http://aka.ms/vcpython27</span><br></pre></td></tr></table></figure></p><p>根据上述提示安装好VC++ for python2.7,然后再运行 pip install mysql,报如下错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_mysql.c(42) : fatal error C1083: Cannot open include file: &apos;config-win.h&apos;: No such file or directory</span><br><span class="line">error: command &apos;C:\\Users\\XXX\\AppData\\Local\\Programs\\Common\\Microsoft\\Visual C++ for Python\\9.0\\VC\\Bin\\amd64\\cl.exe&apos; failed with exit status 2</span><br></pre></td></tr></table></figure><p>然后下载,安装驱动：</p><p>64位：<a href="https://www.jb51.net/softs/73369.html#download" target="_blank" rel="noopener">MySQL-python-1.2.3.win-amd64-py2.7.exe </a></p><p>32位: <a href="https://pypi.python.org/packages/27/06/596ae3afeefc0cda5840036c42920222cb8136c101ec0f453f2e36df12a0/MySQL-python-1.2.5.win32-py2.7.exe#md5=6f43f42516ea26e79cfb100af69a925e" target="_blank" rel="noopener">MySQL-python-1.2.5.win32-py2.7.exe</a></p><p>安装完毕之后,再运行 pip install mysql 即可安装成功。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;win10 下python 2.7 安装mysql-python,会出现错误，详细情况与解决方法如下&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows控制台更改编码方法</title>
+    <link href="http://yoursite.com/2019/04/23/windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%9B%B4%E6%94%B9%E7%BC%96%E7%A0%81%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/04/23/windows控制台更改编码方法/</id>
+    <published>2019-04-23T07:02:42.000Z</published>
+    <updated>2022-05-10T02:42:27.955Z</updated>
+    
+    <content type="html"><![CDATA[<p>在cmd和powershell中默认编码是GBK,有时会出现乱码,使用如下命令可以将控制台编码转换为utf-8<a id="more"></a>:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 65501</span><br></pre></td></tr></table></figure><p>切换回GBK：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 936</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在cmd和powershell中默认编码是GBK,有时会出现乱码,使用如下命令可以将控制台编码转换为utf-8&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql更改表字段编码</title>
+    <link href="http://yoursite.com/2019/04/23/mysql%E6%9B%B4%E6%94%B9%E8%A1%A8%E5%AD%97%E6%AE%B5%E7%BC%96%E7%A0%81/"/>
+    <id>http://yoursite.com/2019/04/23/mysql更改表字段编码/</id>
+    <published>2019-04-23T05:32:05.000Z</published>
+    <updated>2022-05-10T02:42:27.955Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天向mysql数据库的表中添加emoji表情，结果发现存储时都变成问号了。看了一下数据库编码是utf8mb4,表编码也是utf8mb4,再一看表里的几个字段是utf8编码，并不是utf8mb4编码的,就在网上找了一下更改mysql表字段编码的语句，记录一下。<a id="more"></a></p><p>修改表的编码方式：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">DEFAULT</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8mb4; </span><br><span class="line"><span class="comment">-- 该命令用于将表tablename的编码方式改为utf8mb4</span></span><br></pre></td></tr></table></figure><p>修改字段的编码方式：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">CHANGE</span> <span class="keyword">name</span> <span class="keyword">name</span> longtext <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8mb4 <span class="keyword">NOT</span> <span class="literal">NULL</span>; </span><br><span class="line"><span class="comment">-- 该命令将表tablename中字段name设为utf8mb4格式。</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天向mysql数据库的表中添加emoji表情，结果发现存储时都变成问号了。看了一下数据库编码是utf8mb4,表编码也是utf8mb4,再一看表里的几个字段是utf8编码，并不是utf8mb4编码的,就在网上找了一下更改mysql表字段编码的语句，记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用git时LF与CRLF转换的问题</title>
+    <link href="http://yoursite.com/2019/04/11/%E4%BD%BF%E7%94%A8git%E6%97%B6LF%E4%B8%8ECRLF%E8%BD%AC%E6%8D%A2%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/04/11/使用git时LF与CRLF转换的问题/</id>
+    <published>2019-04-11T11:44:19.000Z</published>
+    <updated>2022-05-10T02:42:27.955Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在使用git时,会报LF和CRLF转换失败的错误。因为linux下换行使用的是LF,windows使用CRLF作为换行,git默认开启LF和CRLF的转换。<a id="more"></a>将转换关掉就可以啦。</p><h3 id="git设置命令如下"><a href="#git设置命令如下" class="headerlink" title="git设置命令如下:"></a>git设置命令如下:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br><span class="line">git config --global core.safecrlf true</span><br></pre></td></tr></table></figure><h3 id="含义："><a href="#含义：" class="headerlink" title="含义："></a>含义：</h3><h4 id="提交时转换为LF，检出时转换为CRLF"><a href="#提交时转换为LF，检出时转换为CRLF" class="headerlink" title="提交时转换为LF，检出时转换为CRLF"></a>提交时转换为LF，检出时转换为CRLF</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf true</span><br></pre></td></tr></table></figure><h4 id="提交时转换为LF，检出时不转换"><a href="#提交时转换为LF，检出时不转换" class="headerlink" title="提交时转换为LF，检出时不转换"></a>提交时转换为LF，检出时不转换</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf input</span><br></pre></td></tr></table></figure><h4 id="提交检出均不转换"><a href="#提交检出均不转换" class="headerlink" title="提交检出均不转换"></a>提交检出均不转换</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure><h4 id="拒绝提交包含混合换行符的文件"><a href="#拒绝提交包含混合换行符的文件" class="headerlink" title="拒绝提交包含混合换行符的文件"></a>拒绝提交包含混合换行符的文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf true</span><br></pre></td></tr></table></figure><h4 id="允许提交包含混合换行符的文件"><a href="#允许提交包含混合换行符的文件" class="headerlink" title="允许提交包含混合换行符的文件"></a>允许提交包含混合换行符的文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf false</span><br></pre></td></tr></table></figure><h4 id="提交包含混合换行符的文件时给出警告"><a href="#提交包含混合换行符的文件时给出警告" class="headerlink" title="提交包含混合换行符的文件时给出警告"></a>提交包含混合换行符的文件时给出警告</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf warn</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在使用git时,会报LF和CRLF转换失败的错误。因为linux下换行使用的是LF,windows使用CRLF作为换行,git默认开启LF和CRLF的转换。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dotnet core 1.1.1在Startup 的构造函数调用其他函数出错</title>
+    <link href="http://yoursite.com/2019/04/01/dotnet-core-1-1-1%E5%9C%A8Startup-%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0%E5%87%BA%E9%94%99/"/>
+    <id>http://yoursite.com/2019/04/01/dotnet-core-1-1-1在Startup-的构造函数调用其他函数出错/</id>
+    <published>2019-04-01T11:57:23.000Z</published>
+    <updated>2022-05-10T02:42:27.954Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近使用dotnet core 过程中遇到一个问题,在1.1.1版本的asp dotnet core中，在Startup.cs 的构造函数中,调用一个根据host设置环境的函数,在docker上运行,会出现一个问题。</p><a id="more"></a><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在Startup的构造函数中调用如下函数:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public bool IsProduction()</span><br><span class="line">&#123;</span><br><span class="line">    string hostName = Dns.GetHostName();</span><br><span class="line">    return new[] &#123; &quot;aaa&quot;, &quot;bbb&quot; &#125;.Contains(hostName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在本地环境可以正常运行,放到docker上会报错:<br><img src="/2019/04/01/dotnet-core-1-1-1在Startup-的构造函数调用其他函数出错/error.png" alt="报错图片"></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将函数里面的代码直接放进构造函数里面执行,能够正常运行。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近使用dotnet core 过程中遇到一个问题,在1.1.1版本的asp dotnet core中，在Startup.cs 的构造函数中,调用一个根据host设置环境的函数,在docker上运行,会出现一个问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="dotnet core" scheme="http://yoursite.com/categories/dotnet-core/"/>
+    
+    
+      <category term="dotnet core" scheme="http://yoursite.com/tags/dotnet-core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用hexo+github搭建博客</title>
+    <link href="http://yoursite.com/2019/03/24/%E4%BD%BF%E7%94%A8hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2019/03/24/使用hexo+github搭建博客/</id>
+    <published>2019-03-24T07:04:54.000Z</published>
+    <updated>2022-05-10T02:42:27.955Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近想搭建一个自己的博客，用来记录日常工作生活中的一些知识，经验。在网上找了找，发现用hexo + github 搭建博客的教程还挺多的，于是就参考教程搭了这个博客。</p><a id="more"></a><h2 id="Hexo介绍"><a href="#Hexo介绍" class="headerlink" title="Hexo介绍"></a>Hexo介绍</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br><a href="https://hexo.io/zh-cn" target="_blank" rel="noopener">hexo中文官网</a></p><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>使用hexo + github 搭建博客，需要安装node,git,并有一个github账号，相关安装,注册不在此细说。<br><br><a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a><br><a href="https://nodejs.org/" target="_blank" rel="noopener">node官网</a><br><a href="https://github.com/" target="_blank" rel="noopener">github官网</a></p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>初始化blog目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure></p><p>进入blog目录，并启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></p><p>访问localhost:4000就可以看到页面了<br><img src="/2019/03/24/使用hexo+github搭建博客/hexo.png" alt></p><h2 id="创建github仓库"><a href="#创建github仓库" class="headerlink" title="创建github仓库"></a>创建github仓库</h2><p>登录github，点击创建一个新的版本库，这个版本库名称要和github用户名一致<br><img src="/2019/03/24/使用hexo+github搭建博客/github0.png" alt><br><img src="/2019/03/24/使用hexo+github搭建博客/github1.png" alt></p><h2 id="修改hexo本地配置文件"><a href="#修改hexo本地配置文件" class="headerlink" title="修改hexo本地配置文件"></a>修改hexo本地配置文件</h2><p>找到blog目录下, _config.yml文件，进行修改,我的配置文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/chaoliulc/chaoliulc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p><p>更改完成之后,还需要安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a>插件，才能部署到github上。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><h3 id="安装next主题"><a href="#安装next主题" class="headerlink" title="安装next主题"></a>安装next主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><p>修改blog 目录下 _config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure></p><p>更改语言为中文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure></p><p>创建tags,categories菜单对应的文件,在终端输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p><p>进入 blog/themes/next目录下，修改_config.yml文件更改主题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure></p><h3 id="增加标签-分类菜单"><a href="#增加标签-分类菜单" class="headerlink" title="增加标签,分类菜单"></a>增加标签,分类菜单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tags: /tags/ || tags</span><br><span class="line">categories: /categories/ || th</span><br></pre></td></tr></table></figure><h3 id="去掉底部powered"><a href="#去掉底部powered" class="headerlink" title="去掉底部powered"></a>去掉底部powered</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powered: false</span><br></pre></td></tr></table></figure><h3 id="去掉底部主题版本"><a href="#去掉底部主题版本" class="headerlink" title="去掉底部主题版本"></a>去掉底部主题版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">theme:</span><br><span class="line">  # Theme &amp; scheme info link (Theme - NexT.scheme).</span><br><span class="line">  enable: false</span><br><span class="line">  # Version info of NexT after scheme info (vX.X.X).</span><br><span class="line">  version: false</span><br></pre></td></tr></table></figure><h3 id="网站底部字数，文章字数统计"><a href="#网站底部字数，文章字数统计" class="headerlink" title="网站底部字数，文章字数统计"></a>网站底部字数，文章字数统计</h3><ul><li><p>切换到blog目录</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure></li><li><p>修改_config.yml</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https://github.com/willin/hexo-wordcount</span><br><span class="line">post_wordcount:</span><br><span class="line">  item_text: true</span><br><span class="line">  wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  totalcount: true</span><br><span class="line">  separated_meta: true</span><br></pre></td></tr></table></figure></li><li><p>修改blog/themes/next/languages/zh-Hans.tml</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">totalcount: 博客全站总字数</span><br></pre></td></tr></table></figure></li></ul><h3 id="来必力"><a href="#来必力" class="headerlink" title="来必力"></a>来必力</h3><ul><li><a href="https://www.livere.com/" target="_blank" rel="noopener">来必力官网</a>注册账号，然后点击安装<img src="/2019/03/24/使用hexo+github搭建博客/livere0.png" alt> <img src="/2019/03/24/使用hexo+github搭建博客/livere1.png" alt>，获取livere_uid <img src="/2019/03/24/使用hexo+github搭建博客/livere2.png" alt>,填入配置文件  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere_uid: #your livere_uid</span><br></pre></td></tr></table></figure></li></ul><h3 id="网站底部访问量"><a href="#网站底部访问量" class="headerlink" title="网站底部访问量"></a>网站底部访问量</h3><ul><li><p>打开blog/themes/next/layout/_partials/footer.swig文件，在copyright加上如下代码</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li><li><p>添加显示统计代码</p></li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user-md"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line">  本站访客数:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a><br><a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">Next中文文档</a><br><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">Hexo-NexT配置超炫网页效果</a><br><a href="https://www.jianshu.com/p/21c94eb7bcd1" target="_blank" rel="noopener">绝配：hexo+next主题及我走过的坑</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近想搭建一个自己的博客，用来记录日常工作生活中的一些知识，经验。在网上找了找，发现用hexo + github 搭建博客的教程还挺多的，于是就参考教程搭了这个博客。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
